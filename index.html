@@ -1,14 +1,37 @@
-style.css
-Cricket Scorer
-Runs: 0
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cricket Scorer</title>
+  style.css
+</head>
+<body>
+  <div class="container">
+    <h1>Cricket Scorer</h1>
+    <div class="scoreboard">
+      <p>Runs: <span id="runs">0</span></p>
+      <p>Overs: <span id="overs">0.0</span></p>
+      <p>Wickets: <span id="wickets">0</span></p>
+    </div>
 
-Overs: 0.0
+    <h3>Runs</h3>
+    <button onclick="addRun(1)">+1</button>
+    <button onclick="addRun(-1)">-1</button>
+    <button onclick="addRun(4)">+4</button>
+    <button onclick="addRun(6)">+6</button>
 
-Wickets: 0
+   h3>
+    <button onclick="addBall(1)">+ Ball</button>
+    <button onclick="addBall(-1)">- Ball</button>
 
-Runs
-Balls / Overs
-Wickets
+    <h3>Wickets</h3>
+    <button onclick="addWicket(1)">+ Wicket</button>
+    <button onclick="addWicket(-1)">- Wicket</button>
 
-
-script.js
+    <br><br>
+    <button onclick="reset()">Reset</button>
+  </div>
+  script.js</script>
+</body>
+</html>
