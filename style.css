@@ -61,6 +61,15 @@ button:hover {
 .run-dot { background: #6c757d; }
 .run-dot:hover { background: #545b62; }
 
+/* Pink and emerald for 2 and 3 buttons */
+.run-pink { background: #ff80bf; color: #fff; }
+.run-pink:hover { filter: brightness(0.95); }
+
+.run-emerald { background: #10b981; color: #fff; }
+.run-emerald:hover { filter: brightness(0.95); }
+
+.run-row { display: flex; justify-content: center; gap: 8px; margin-bottom: 8px; }
+
 /* -1 run (dark blue) */
 .run-minus { background: #0b3d91; }
 .run-minus:hover { background: #062a63; }
