@@ -45,7 +45,6 @@ function updateDisplay() {
 
 function addRun(value, countBall = false) {
   // Negative values only adjust runs and do not count as a ball
-  debug(`addRun called value=${value} countBall=${countBall}`);
   if (value < 0) {
     runs = Math.max(0, runs + value);
   } else {
@@ -60,7 +59,6 @@ function addRun(value, countBall = false) {
 // Wrapper handlers for buttons that also update counters
 function pressOne() {
   // '1' button: adds 1 run and counts as a ball; increment one counter
-  debug('pressOne');
   addRun(1, true);
   counters.one = (counters.one || 0) + 1;
   updateDisplay();
@@ -68,13 +66,11 @@ function pressOne() {
 
 // Debug helper: show last action in a visible debug area
 function debug(msg) {
-  const el = document.getElementById('debug');
-  if (el) el.textContent = msg;
+  // debug helper removed — no-op to keep calls safe if left elsewhere
 }
 
 function pressPlusOne() {
   // '+1' button: adds 1 run but does NOT count as a ball
-  debug('pressPlusOne');
   addRun(1, false);
 }
 
@@ -82,14 +78,12 @@ function pressTwo() { addRun(2, true); }
 function pressThree() { addRun(3, true); }
 
 function pressFour() {
-  debug('pressFour');
   addRun(4, true);
   counters.four = (counters.four || 0) + 1;
   updateDisplay();
 }
 
 function pressSix() {
-  debug('pressSix');
   addRun(6, true);
   counters.six = (counters.six || 0) + 1;
   updateDisplay();
@@ -97,7 +91,6 @@ function pressSix() {
 
 function pressDot() {
   // Dot: counts as a ball but no runs
-  debug('pressDot');
   addRun(0, true);
   counters.dot = (counters.dot || 0) + 1;
   updateDisplay();
