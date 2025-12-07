@@ -9,14 +9,16 @@ body {
 .container {
   max-width: 400px;
   margin: auto;
-  background: white;
-  padding: 20px;
+  background: #9ad07a; /* darker grass green background */
+  padding: 12px 20px; /* reduce top spacing so title sits higher */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 h1 {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
+  margin-top: 6px;
+  font-size: 1.4em; /* slightly smaller title */
 }
 
 .scoreboard p {
@@ -37,4 +39,64 @@ button {
 
 button:hover {
   background: #0056b3;
+}
+
+/* Ball buttons (red) */
+.ball-btn {
+  background: #dc3545;
+}
+.ball-btn:hover { background: #b02a37; }
+
+/* Run buttons colors */
+.run-bronze { background: #cd7f32; }
+.run-bronze:hover { background: #a56428; }
+
+.run-silver { background: #c0c0c0; color: #000; }
+.run-silver:hover { background: #9e9e9e; }
+
+.run-gold { background: #ffd700; color: #000; }
+.run-gold:hover { background: #e6c200; }
+
+/* Dot ball: no runs but counts as a ball */
+.run-dot { background: #6c757d; }
+.run-dot:hover { background: #545b62; }
+
+/* -1 run (dark blue) */
+.run-minus { background: #0b3d91; }
+.run-minus:hover { background: #062a63; }
+
+/* Extra +1 button (blue) - adds 1 run but does NOT count as a ball */
+.extra-blue { background: #007bff; }
+.extra-blue:hover { background: #0056b3; }
+
+/* Wicket buttons styled red */
+.wicket-btn { background: #dc3545; color: white; }
+.wicket-btn:hover { background: #b02a37; }
+
+/* Small button modifier (half size) */
+.small-btn { padding: 5px 8px; font-size: 0.9em; }
+
+/* Reduce Run Rate text size */
+#runrate { font-size: 0.75em; }
+
+/* Counter badge next to buttons */
+.btn-counter {
+  display: inline-block;
+  margin-left: 6px;
+  background: rgba(0,0,0,0.08);
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 0.85em;
+}
+
+/* Reset button style */
+.reset-btn { background: #6c757d; }
+.reset-btn:hover { background: #545b62; }
+
+/* Wicket fallen list */
+.wicket-list {
+  margin-top: 8px;
+  font-size: 0.95em;
+  color: #1b1b1b;
+  text-align: left;
 }
