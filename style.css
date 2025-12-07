@@ -35,6 +35,8 @@ button {
   background: #007bff;
   color: white;
   cursor: pointer;
+  min-width: 100px;
+  min-height: 45px;
 }
 
 button:hover {
