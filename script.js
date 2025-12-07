@@ -2,7 +2,7 @@ let runs = 0;
 let balls = 0;
 let wickets = 0;
 let wicketDetails = [];
-let counters = { one: 0, four: 0, six: 0, dot: 0 };
+let counters = { one: 0, two: 0, three: 0, four: 0, six: 0, dot: 0, plus1: 0 };
 
 // Load saved state from localStorage
 if (localStorage.getItem('scoreData')) {
@@ -11,7 +11,7 @@ if (localStorage.getItem('scoreData')) {
   balls = saved.balls || 0;
   wickets = saved.wickets || 0;
   wicketDetails = saved.wicketDetails || [];
-  counters = saved.counters || { one: 0, four: 0, six: 0, dot: 0 };
+  counters = saved.counters || { one: 0, two: 0, three: 0, four: 0, six: 0, dot: 0, plus1: 0 };
 }
 
 function updateDisplay() {
@@ -35,8 +35,11 @@ function updateDisplay() {
 
   // Update counters display if present
   const c1 = document.getElementById('cnt-1'); if (c1) c1.textContent = counters.one || 0;
+  const c2 = document.getElementById('cnt-2'); if (c2) c2.textContent = counters.two || 0;
+  const c3 = document.getElementById('cnt-3'); if (c3) c3.textContent = counters.three || 0;
   const c4 = document.getElementById('cnt-four'); if (c4) c4.textContent = counters.four || 0;
   const c6 = document.getElementById('cnt-six'); if (c6) c6.textContent = counters.six || 0;
+  const cp = document.getElementById('cnt-plus1'); if (cp) cp.textContent = counters.plus1 || 0;
   const cd = document.getElementById('cnt-dot'); if (cd) cd.textContent = counters.dot || 0;
 
   // Save state to localStorage (include wicket details and counters)
@@ -65,17 +68,26 @@ function pressOne() {
 }
 
 // Debug helper: show last action in a visible debug area
-function debug(msg) {
-  // debug helper removed — no-op to keep calls safe if left elsewhere
-}
+// removed debug helper
 
 function pressPlusOne() {
   // '+1' button: adds 1 run but does NOT count as a ball
   addRun(1, false);
+  counters.plus1 = (counters.plus1 || 0) + 1;
+  updateDisplay();
 }
 
-function pressTwo() { addRun(2, true); }
-function pressThree() { addRun(3, true); }
+function pressTwo() { 
+  addRun(2, true); 
+  counters.two = (counters.two || 0) + 1;
+  updateDisplay();
+}
+
+function pressThree() { 
+  addRun(3, true); 
+  counters.three = (counters.three || 0) + 1;
+  updateDisplay();
+}
 
 function pressFour() {
   addRun(4, true);
@@ -117,6 +129,8 @@ function reset() {
   balls = 0;
   wickets = 0;
   wicketDetails = [];
+  // Reset counters to zero so button counters are cleared on reset
+  counters = { one: 0, four: 0, six: 0, dot: 0, two: 0, three: 0, plus1: 0 };
   updateDisplay();
 }
 
